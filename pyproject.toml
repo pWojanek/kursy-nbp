@@ -1,0 +1,23 @@
+[project]
+name = "kursy"
+version = "0.1.0"
+description = "CLI for National Bank of Poland exchange rates: fetches rates from the NBP API, caches them in SQLite and finds the rate for an invoice date (last business day before it, per Polish VAT rules)."
+readme = "README.md"
+authors = [{ name = "Piotr Wojanek", email = "pwojanek.contact@gmail.com" }]
+requires-python = ">=3.13"
+dependencies = []
+
+[project.scripts]
+kursy = "kursy:main"
+
+[build-system]
+requires = ["uv_build>=0.13.6,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = ["ipython>=9.18.1", "pyright>=1.1.414", "pytest>=9.2.0", "ruff>=0.17.3"]
+
+[tool.ruff]
+lint.select = ["F", "E", "I", "B", "UP"]
+[tool.pyright]
+typeCheckingMode = "strict"
