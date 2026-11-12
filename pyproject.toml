@@ -5,7 +5,9 @@ description = "CLI for National Bank of Poland exchange rates: fetches rates fro
 readme = "README.md"
 authors = [{ name = "Piotr Wojanek", email = "pwojanek.contact@gmail.com" }]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "httpx>=0.28.1",
+]
 
 [project.scripts]
 kursy = "kursy:main"
