@@ -1,10 +1,7 @@
-from decimal import Decimal
-
-import httpx
+from kursy.nbp import get_current_rate
 
 
 def main() -> None:
-    data = httpx.get(
-        "https://api.nbp.pl/api/exchangerates/rates/a/usd/?format=json"
-    ).json(parse_float=Decimal)
-    print(f"Kurs dolara to: {data['rates'][0]['mid']}")
+
+    print(f"Kurs dolara to: {get_current_rate('usd')}")
+    print(f"Kurs Euro to: {get_current_rate('eur')}")
